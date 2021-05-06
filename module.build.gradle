@@ -1,0 +1,50 @@
+android{
+
+
+    flavorDimensions("abi")
+    productFlavors{
+
+        //开发环境
+        dev {
+            dimension "abi"
+            buildConfigField "String", "BASE_URL", "\"http://10.110.52.28:8081/\""
+            buildConfigField("String", "MQTT_HOST", "\"tcp://10.110.52.29:1883\"")
+            buildConfigField("String", "MQTT_USER_NAME", "\"admin\"")
+            buildConfigField("String", "MQTT_PSW", "\"public\"")
+            buildConfigField("String", "PROFESSION_QRCODE_PREFIX_URL", "\"https://ybstest.qxfoodom.com/api/wechat/pub/tableQrCodeRedirect?deviceSn=\"")
+        }
+
+        // 测试环境
+        beta {
+            dimension "abi"
+            buildConfigField "String", "BASE_URL", "\"https://ybstest.qxfoodom.com/\""
+            buildConfigField("String", "MQTT_HOST", "\"tcp://ybstest.qxfoodom.com:9081\"")
+            buildConfigField("String", "MQTT_USER_NAME", "\"admin\"")
+            buildConfigField("String", "MQTT_PSW", "\"public\"")
+            buildConfigField("String", "PROFESSION_QRCODE_PREFIX_URL", "\"https://ybstest.qxfoodom.com/api/wechat/pub/tableQrCodeRedirect?deviceSn=\"")
+        }
+
+        // 生产环境
+        produce {
+            dimension "abi"
+            buildConfigField "String", "BASE_URL", "\"https://ybs.qxfoodom.com/\""
+            buildConfigField("String", "MQTT_HOST", "\"tcp://ybs.qxfoodom.com:1883\"")
+            buildConfigField("String", "MQTT_USER_NAME", "\"ybs\"")
+            buildConfigField("String", "MQTT_PSW", "\"ybs@2020\"")
+            buildConfigField("String", "PROFESSION_QRCODE_PREFIX_URL", "\"https://ybs.qxfoodom.com/api/wechat/pub/tableQrCodeRedirect?deviceSn=\"")
+
+        }
+
+        // 本地环境
+        local {
+            dimension "abi"
+            buildConfigField "String", "BASE_URL", "\"https://10.187.37.21:8762/\""
+            buildConfigField("String", "MQTT_HOST", "\"tcp://ybstest.qxfoodom.com:9081\"")
+            buildConfigField("String", "MQTT_USER_NAME", "\"admin\"")
+            buildConfigField("String", "MQTT_PSW", "\"public\"")
+            buildConfigField("String", "PROFESSION_QRCODE_PREFIX_URL", "\"https://ybstest.qxfoodom.com/api/wechat/pub/tableQrCodeRedirect?deviceSn=\"")
+        }
+
+    }
+
+}

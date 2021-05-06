@@ -1,0 +1,73 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+//apply plugin: 'kotlin-android-extensions' //for old version find view
+apply plugin: 'kotlin-parcelize'
+//apply plugin: 'kotlin-kapt'  // for ARouter
+apply from: "../module.build.gradle"
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+        //阿里路由框架配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    api rootProject.ext.dependencies['loadLibAndJar']
+    api rootProject.ext.dependencies['kotlin-stdlib']
+    api rootProject.ext.dependencies['appcompat']
+    api rootProject.ext.dependencies['core-ktx']
+    api rootProject.ext.dependencies['constraintlayout']
+    api rootProject.ext.dependencies['recyclerview']
+    testApi rootProject.ext.dependencies['junit']
+    androidTestApi rootProject.ext.dependencies['androidJunit']
+    androidTestApi rootProject.ext.dependencies['espresso']
+
+
+    api rootProject.ext.dependencies["arouter-api"]
+//    kapt  rootProject.ext.dependencies["arouter-compiler"]
+    api rootProject.ext.dependencies['AutoSize']
+    api rootProject.ext.dependencies['easypermissions']
+    api rootProject.ext.dependencies['coroutines']
+    api rootProject.ext.dependencies['viewModelScope']
+    api rootProject.ext.dependencies['lifecycleScope']
+    api rootProject.ext.dependencies['gson']
+    api rootProject.ext.dependencies['glide']
+    //    kapt  rootProject.ext.dependencies["glide-compiler"]
+
+    api rootProject.ext.dependencies['utilcodex']
+    api rootProject.ext.dependencies['retrofit']
+    api rootProject.ext.dependencies['converter-gson']
+    api rootProject.ext.dependencies['httpLog']
+    api rootProject.ext.dependencies['livedata-ktx']
+    api rootProject.ext.dependencies['lifecycleExt']
+    api rootProject.ext.dependencies['lifecycleRuntime']
+    api rootProject.ext.dependencies['lifecycleCommon']
+
+}

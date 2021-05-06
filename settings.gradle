@@ -1,0 +1,3 @@
+include ':base_module'
+include ':app'
+rootProject.name = "RetrieveIdTool"

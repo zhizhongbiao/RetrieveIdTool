@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvSn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="点击获取S/N"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:textColor="#00FF00"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMacAddr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="点击获取Mac"
+        android:gravity="center"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:textSize="22sp"
+        android:textColor="#00FF00"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSn" />
+
+
+
+    <Button
+        android:id="@+id/btnGetMacAndSN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="获取Mac和S/N"
+        android:onClick="getMacAndSn"
+        app:layout_constraintBottom_toBottomOf="@+id/btnGetMac"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/btnGetMac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="getMac"
+        android:text="获取Mac"
+        app:layout_constraintBottom_toBottomOf="@+id/btnGetSn"
+        app:layout_constraintStart_toStartOf="@+id/btnScanMac" />
+
+
+    <Button
+        android:id="@+id/btnGetSn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:onClick="getSn"
+        android:text="获取S/N"
+        app:layout_constraintBottom_toBottomOf="@+id/btnScanSn"
+        app:layout_constraintEnd_toEndOf="@+id/btnScanSn" />
+
+    <Button
+        android:id="@+id/btnScanSn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:onClick="scanSn"
+        android:text="扫描S/N"
+        app:layout_constraintBottom_toBottomOf="@+id/btnUploadSn"
+        app:layout_constraintEnd_toEndOf="@+id/btnUploadSn" />
+
+
+    <Button
+        android:id="@+id/btnUploadSn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="50dp"
+        android:onClick="uploadDevSn"
+        android:text="上传S/N"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+    <Button
+        android:id="@+id/btnUploadMac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="50dp"
+        android:onClick="uploadDevMac"
+        android:text="上传Mac"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSwitchUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:onClick="switchUrl"
+        android:text="正式环境"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnScanMac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="scanMac"
+        android:text="扫描Mac"
+        app:layout_constraintBottom_toBottomOf="@+id/btnScanSn"
+        app:layout_constraintStart_toStartOf="@+id/btnUploadMac" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
