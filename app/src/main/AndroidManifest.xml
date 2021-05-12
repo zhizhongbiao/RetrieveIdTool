@@ -36,8 +36,11 @@
         <activity android:name=".scan.MyScanSnAct"/>
 
         <activity android:name=".scan.MyScanMacAct"/>
+
         <activity android:name=".ocr.MainActivity2"/>
+
         <activity android:name=".ocr.ShowCropperedActivity"/>
+
         <activity android:name=".ocr.TakePhoteActivity"/>
     </application>
 
